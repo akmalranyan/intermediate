@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Data\Tabungan;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+app()->singleton('test', function(){return new App\Data\Tabungan;});
+
 Route::get('/', function () {
-    return view('welcome');
+    return dd(app('test'), app('test'));
 });

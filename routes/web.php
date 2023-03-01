@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Data\Tabungan;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +18,9 @@ use App\Data\Tabungan;
 app()->singleton('test', function(){return new App\Data\Tabungan;});
 
 Route::get('/', function () {
-    return dd(app('test'), app('test'));
+    return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

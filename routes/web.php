@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Data\Tabungan;
 use Illuminate\Support\Facades\Auth;
-
+use App\Notifications\NewVisitor;
+use Illuminate\Notifications\Notifiable;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
